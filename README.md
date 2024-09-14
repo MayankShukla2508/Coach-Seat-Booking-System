@@ -1,4 +1,7 @@
 # Coach-Seat-Booking-System
+PROBLEM STATEMENT
+
+Assessment
 Problem Description:
 1. There are 80 seats in a coach of a train with only 7 seats in a row and last row of only 3
 seats. For simplicity, there is only one coach in this train.
@@ -23,7 +26,7 @@ You can also send us GIT link for the same.
 There are some seats already booked in that coach. So your code should be able to find the
 seats available and then book them.
 
-Solution Explaination:
+SOLUTION EXPLAINATION:
 Coach Layout:
 The coach is represented as an array of rows, where each row is an object with a row_number and a list of seats.
 Each seat in the row is an object with two properties: seat_number and is_booked (which is true if the seat is already reserved, and false if it is available).
