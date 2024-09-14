@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Coach Seat Reservation System</h1>
+
+  <!-- Input field for number of seats -->
+  <input
+    [(ngModel)]="numberOfSeats"
+    type="number"
+    placeholder="Enter number of seats (1-7)"
+  />
+
+  <!-- Button to book seats -->
+  <button (click)="bookSeats()">Book Seats</button>
+
+  <!-- Seating arrangement display -->
+  <div class="coach">
+    <div *ngFor="let row of coach; let rowIndex = index" class="row">
+      <span
+        *ngFor="let seat of row.seats"
+        [ngClass]="{ booked: seat.is_booked, available: !seat.is_booked }"
+      >
+        {{ seat.seat_number }}
+      </span>
+    </div>
+  </div>
+</div>

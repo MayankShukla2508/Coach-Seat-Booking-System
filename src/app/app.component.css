@@ -1,0 +1,143 @@
+/* Main container styling */
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f4f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input and button styling */
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Coach layout */
+.coach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Each row of the coach */
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Individual seat styling */
+span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for available and booked seats */
+.available {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #1e7e34;
+}
+
+.booked {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #c82333;
+}
+
+/* Seat number for hover effect */
+span.available:hover {
+  background-color: #218838;
+}
+
+span.booked:hover {
+  background-color: #c82333;
+  cursor: not-allowed;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+  
+  input {
+    width: 80%;
+  }
+  
+  button {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 10px;
+  }
+  
+  input, button {
+    width: 90%;
+  }
+}
