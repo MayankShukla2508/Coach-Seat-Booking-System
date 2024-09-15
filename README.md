@@ -67,4 +67,45 @@ Filtering and Iteration: The solution leverages JavaScript's array methods (forE
 Sorting: The rows are sorted based on their available consecutive seats using Array.sort(), which ensures that we prioritize booking seats in rows with the most available options.
 Alerting the User: If the booking is successful, the user is alerted with the seat numbers that have been booked. If not enough consecutive seats are available, the user is informed accordingly.
 
+
+
+
+DATABASE STRUCTURE:
+
+Table: Seats
+id (INTEGER, Primary Key, Auto-increment): Unique identifier for each seat.
+row (INTEGER): Row number of the seat.
+seat_number (INTEGER): Seat number within the row.
+status (BOOLEAN): Booking status of the seat (0 for available, 1 for booked).
+
+sql
+CREATE TABLE IF NOT EXISTS Seats (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    row INTEGER NOT NULL,
+    seat_number INTEGER NOT NULL,
+    status BOOLEAN NOT NULL DEFAULT 0
+);
+Example Data Insertion
+To populate the database with initial seat data, you can use the following SQL script:
+
+sql
+-- Insert rows 1 to 11 with 7 seats each
+INSERT INTO Seats (row, seat_number, status) VALUES
+(1, 1, 0), (1, 2, 0), (1, 3, 0), (1, 4, 0), (1, 5, 0), (1, 6, 0), (1, 7, 0),
+(2, 1, 0), (2, 2, 0), (2, 3, 0), (2, 4, 0), (2, 5, 0), (2, 6, 0), (2, 7, 0),
+(3, 1, 0), (3, 2, 0), (3, 3, 0), (3, 4, 0), (3, 5, 0), (3, 6, 0), (3, 7, 0),
+-- Continue this pattern up to row 11
+
+-- Insert last row with 3 seats
+INSERT INTO Seats (row, seat_number, status) VALUES
+(12, 1, 0), (12, 2, 0), (12, 3, 0);
+Explanation
+Table: Seats
+id: Uniquely identifies each seat.
+row: The row number where the seat is located.
+seat_number: The seat's position within the row.
+status: Indicates whether the seat is available (0) or booked (1).
+Summary
+This structure provides a simple yet effective way to manage seat bookings. You can use SQL queries to manage seat availability, book seats, and retrieve seat status as needed.
+
 [Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/MayankShukla2508/Coach-Seat-Booking-System)
